@@ -7,20 +7,19 @@ classes:
 ---
 
 <header class="hero">
-  <div class="hero__eyebrow">EMBEDDED<span class="dot">·</span>ROBOTICS<span class="dot">·</span>SYSTEMS</div>
+  <div class="hero__eyebrow">EMBEDDED SYSTEMS<span class="dot">·</span>ROBOTICS</div>
   <h1 class="hero__title">
     최민석
     <span class="en">Minseok Choi</span>
   </h1>
-  <p class="hero__role">임베디드 시스템 · 로봇 소프트웨어 엔지니어</p>
+  <p class="hero__role">임베디드 시스템 · 로봇 소프트웨어 엔지니어 (직무 희망)</p>
   <p class="hero__desc">
-    베어메탈 펌웨어부터 ROS2 기반 로봇 시스템, 산업 자동화 공정까지 —
     하드웨어와 소프트웨어의 경계에서 동작하는 시스템을 설계하고 구현합니다.
-    레지스터 수준의 제어와 실시간 통신, 그리고 그 위에 올라가는 통합 시스템에 관심이 많습니다.
+    임베디드 시스템과 운영체제, 하드웨어 제어에 관심이 있습니다.
   </p>
 
   <div class="hero__actions">
-    <a class="hero__btn hero__btn--solid" href="#projects">프로젝트 보기 →</a>
+    <a class="hero__btn hero__btn--solid" href="#projects">프로젝트 보기 ↓</a>
     <a class="hero__btn hero__btn--ghost" href="https://github.com/ManticoreXL" target="_blank" rel="noopener">
       <i class="fab fa-github" aria-hidden="true"></i> GitHub
     </a>
@@ -30,7 +29,7 @@ classes:
   </div>
 
   <div class="hero__spec">
-    Kwangwoon Univ. — Computer Engineering<span class="sep">/</span>Seoul, KR<span class="sep">/</span>C · C++ · Python<span class="sep">/</span>STM32 · Linux · ROS2
+    Kwangwoon Univ. — Computer Engineering <span class="sep">/</span>C · C++ · Python<span class="sep">/</span>Linux · STM32 · ROS2
   </div>
 </header>
 
@@ -40,27 +39,16 @@ classes:
 
   <p>
     광운대학교 컴퓨터정보공학부를 졸업하고, 대한상공회의소 서울기술교육센터에서
-    <strong>AI SW 융합 로봇 개발자 과정</strong>을 이수했습니다. MCU 펌웨어, Linux 시스템 프로그래밍,
-    ROS2 로봇 제어, 컴퓨터비전, PLC 산업 자동화까지 임베디드·로봇 분야를 폭넓게 다뤄 왔으며,
-    문제가 생겼을 때 <strong>하드웨어와 소프트웨어를 함께 들여다보는 디버깅</strong>을 중요하게 생각합니다.
+    <strong>AI 융합 로봇 SW 개발자 과정</strong>을 진행 중에 있습니다. MCU 펌웨어, Linux 시스템 프로그래밍, ROS2 로봇 제어, 컴퓨터비전 등 임베디드 시스템 및 로봇 제어 분야에서 여러 팀 프로젝트를 수행했습니다. 문제가 생겼을 때, 하드웨어와 소프트웨어를 함께 들여다보는 디버깅을 중요하게 생각합니다.
   </p>
-
   <div class="facts">
     <div class="fact">
       <span class="fact__k">Education</span>
-      <span class="fact__v">광운대학교 컴퓨터정보공학부<br><small>2020.03 – 2026.02 · GPA 3.52 / 4.50</small></span>
+      <span class="fact__v">광운대학교 컴퓨터정보공학부<br><small>2020.03 – 2026.02</small></span>
     </div>
     <div class="fact">
       <span class="fact__k">Training</span>
-      <span class="fact__v">AI SW 융합 로봇 개발자 과정<br><small>대한상공회의소 서울기술교육센터</small></span>
-    </div>
-    <div class="fact">
-      <span class="fact__k">Training</span>
-      <span class="fact__v">NAND/SSD 플래시 기초 및 기술 개요<br><small>광운대학교 반도체기술교육센터</small></span>
-    </div>
-    <div class="fact">
-      <span class="fact__k">Certificate</span>
-      <span class="fact__v">TOPCIT 3수준<br><small>IITP · 2025.05</small></span>
+      <span class="fact__v">AI 융합 로봇 SW 개발자 과정<br><small>대한상공회의소 서울기술교육센터<br>25.12.23 ~ 26.07.21</small></span>
     </div>
   </div>
 </section>
