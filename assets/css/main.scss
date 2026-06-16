@@ -1,0 +1,452 @@
+---
+# 이 front matter(빈 ---)가 있어야 Jekyll이 SCSS로 컴파일합니다.
+---
+
+@charset "utf-8";
+
+/* ═══════════════════════════════════════════════
+   1. Minimal Mistakes 변수 오버라이드
+   (테마 import 이전에 선언해야 !default 값을 덮어씁니다)
+   ═══════════════════════════════════════════════ */
+
+/* — Typography — */
+$serif:              "Pretendard Variable", Pretendard, Georgia, serif;
+$sans-serif:         "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$sans-serif-narrow:  $sans-serif;
+$monospace:          "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, Monaco, "Courier New", monospace;
+$global-font-family:  $sans-serif;
+$header-font-family:  "Space Grotesk", $sans-serif;
+
+/* — Colors — */
+$text-color:                 #16202b;
+$muted-text-color:           #5b6b7a;
+$background-color:           #ffffff;
+$primary-color:              #0d4fbd;
+$border-color:               #e3e8ee;
+$code-background-color:      #f5f7fa;
+$code-background-color-dark: #0b2241;
+
+$link-color:                 #0d4fbd;
+$link-color-hover:           #0a3f96;
+$link-color-visited:         #0d4fbd;
+
+$masthead-link-color:        #16202b;
+$masthead-link-color-hover:  #0d4fbd;
+$navicon-link-color-hover:   #0d4fbd;
+
+$footer-background-color:    #0c2545;
+
+$success-color:              #0f7a63;
+$warning-color:              #b26a00;
+$info-color:                 #0d4fbd;
+
+/* ═══════════════════════════════════════════════
+   2. 테마 본체 import
+   ═══════════════════════════════════════════════ */
+@import "minimal-mistakes";
+
+/* ═══════════════════════════════════════════════
+   3. Blueprint Instrument — 커스텀 컴포넌트
+   ═══════════════════════════════════════════════ */
+
+$accent:        #0d4fbd;
+$ink:           #16202b;
+$navy:          #0c2545;
+$surface:       #f6f8fa;
+$hairline:      #e3e8ee;
+
+:root { --accent: #{$accent}; }
+
+/* 본문 가독성 미세 조정 */
+.page__content {
+  p, li { line-height: 1.78; }
+}
+
+/* 제목 weight 정돈 */
+h1, h2, h3, h4 { letter-spacing: -0.01em; }
+
+/* 마스트헤드: 하단 헤어라인 + 살짝의 무게감 */
+.masthead {
+  border-bottom: 1px solid $hairline;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+}
+.greedy-nav .site-title,
+.masthead .site-title {
+  font-family: "Space Grotesk", $sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.greedy-nav a { font-weight: 500; }
+
+/* ── 공통 섹션 래퍼 ── */
+.section { margin: 4.5rem 0; }
+.section__eyebrow {
+  font-family: $monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $accent;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.section__title {
+  font-family: "Space Grotesk", $sans-serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: $ink;
+  margin: 0 0 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════ HERO ═══════════ */
+.hero {
+  position: relative;
+  margin: 1.5rem 0 1rem;
+  padding: clamp(2.4rem, 5vw, 4.2rem) clamp(1.6rem, 4vw, 3.4rem);
+  border-radius: 16px;
+  overflow: hidden;
+  color: #eaf1fb;
+  background-color: $navy;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center;
+}
+.hero::after {
+  /* 우상단 코발트 글로우(아주 은은하게) */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 88% 6%, rgba(13, 79, 189, 0.45), transparent 55%);
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
+
+.hero__eyebrow {
+  font-family: $monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  color: #7fb0f5;
+  margin-bottom: 1rem;
+}
+.hero__eyebrow .dot { color: rgba(127, 176, 245, 0.45); padding: 0 0.35em; }
+
+.hero__title {
+  font-family: "Space Grotesk", $sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+.hero__title .en {
+  display: block;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #9bb8e0;
+  margin-top: 0.5rem;
+}
+.hero__role {
+  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  font-weight: 500;
+  color: #cfe0f7;
+  margin: 0.6rem 0 1.1rem;
+}
+.hero__desc {
+  max-width: 46rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #b9cbe6;
+  margin: 0 0 1.8rem;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.8rem; }
+.hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.62em 1.15em;
+  border-radius: 9px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.hero__btn--solid {
+  background: #ffffff;
+  color: $navy !important;
+}
+.hero__btn--solid:hover { transform: translateY(-1px); background: #eef4ff; }
+.hero__btn--ghost {
+  background: transparent;
+  color: #dbe7fa !important;
+  border: 1px solid rgba(219, 231, 250, 0.35);
+}
+.hero__btn--ghost:hover { border-color: rgba(219, 231, 250, 0.7); background: rgba(255, 255, 255, 0.06); }
+
+.hero__spec {
+  font-family: $monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: #84a3cf;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.hero__spec .sep { color: rgba(132, 163, 207, 0.4); padding: 0 0.55em; }
+
+/* ═══════════ FACTS (About 요약) ═══════════ */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+.fact {
+  background: $surface;
+  border: 1px solid $hairline;
+  border-radius: 12px;
+  padding: 1.05rem 1.2rem;
+}
+.fact__k {
+  font-family: $monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.fact__v { font-size: 0.96rem; color: $ink; line-height: 1.55; }
+.fact__v small { color: $muted-text-color; }
+
+/* ═══════════ SKILLS ═══════════ */
+.skills { display: flex; flex-direction: column; gap: 1.1rem; }
+.skill-group {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px dashed $hairline;
+}
+.skill-group:last-child { border-bottom: none; padding-bottom: 0; }
+.skill-group__label {
+  font-family: $monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: $ink;
+  font-weight: 500;
+  padding-top: 0.2rem;
+}
+.skill-group__items { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+.chip {
+  display: inline-block;
+  font-family: $monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0.01em;
+  color: #1f3a63;
+  background: #eef4fd;
+  border: 1px solid #d7e5fb;
+  border-radius: 7px;
+  padding: 0.28em 0.66em;
+  line-height: 1.4;
+}
+
+/* ═══════════ PROJECT GRID (홈) ═══════════ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+.proj-card {
+  --accent: #{$accent};
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid $hairline;
+  border-radius: 14px;
+  padding: 1.5rem 1.45rem 1.35rem;
+  overflow: hidden;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.14s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.proj-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.proj-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(12, 37, 69, 0.10);
+  border-color: #cdd9e7;
+}
+.proj-card__eyebrow {
+  font-family: $monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+.proj-card__title {
+  font-family: "Space Grotesk", $sans-serif;
+  font-size: 1.14rem;
+  font-weight: 600;
+  color: $ink;
+  line-height: 1.35;
+  margin: 0.55rem 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+.proj-card__summary {
+  font-size: 0.9rem;
+  line-height: 1.62;
+  color: $muted-text-color;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+.proj-card__stack { display: flex; flex-wrap: wrap; gap: 0.34rem; margin-bottom: 1rem; }
+.proj-card__stack .chip { font-size: 0.7rem; padding: 0.22em 0.55em; }
+.proj-card__link {
+  font-family: "Space Grotesk", $sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ═══════════ CONTACT ═══════════ */
+.contact-strip {
+  background: $navy;
+  border-radius: 16px;
+  padding: 2.4rem clamp(1.6rem, 4vw, 3rem);
+  color: #dbe7fa;
+  text-align: center;
+}
+.contact-strip h2 {
+  color: #fff;
+  font-family: "Space Grotesk", $sans-serif;
+  margin-top: 0;
+}
+.contact-strip p { color: #9fb8da; max-width: 34rem; margin: 0.4rem auto 1.4rem; }
+.contact-strip .hero__actions { justify-content: center; margin-bottom: 0; }
+
+/* ═══════════ 프로젝트 상세 — 메타 스트립 ═══════════ */
+.proj-meta {
+  background: $surface;
+  border: 1px solid $hairline;
+  border-radius: 12px;
+  padding: 1.2rem 1.35rem;
+  margin: 0 0 2rem;
+}
+.proj-meta__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.9rem 1.4rem;
+  margin-bottom: 1.1rem;
+}
+.proj-meta__k {
+  font-family: $monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $accent;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.proj-meta__v { font-size: 0.92rem; color: $ink; line-height: 1.5; }
+.proj-meta__chips { display: flex; flex-wrap: wrap; gap: 0.36rem; margin-top: 1.05rem; }
+.btn-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Space Grotesk", $sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #fff !important;
+  background: $accent;
+  padding: 0.55em 1.05em;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, transform 0.12s ease;
+}
+.btn-repo:hover { background: $link-color-hover; transform: translateY(-1px); }
+
+/* ═══════════ 트러블슈팅 카드 ═══════════ */
+.ts {
+  border: 1px solid #f0dcc0;
+  border-left: 3px solid $warning-color;
+  border-radius: 10px;
+  background: #fffaf2;
+  padding: 1.1rem 1.3rem;
+  margin: 1.4rem 0;
+}
+.ts__head {
+  font-family: "Space Grotesk", $sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: #16202b;
+  margin-bottom: 0.8rem;
+}
+.ts__tag {
+  display: inline-block;
+  font-family: $monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: $warning-color;
+  border-radius: 5px;
+  padding: 0.18em 0.5em;
+  margin-right: 0.55em;
+  vertical-align: 0.12em;
+}
+.ts dl { margin: 0; }
+.ts dt {
+  font-family: $monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: #9a6500;
+  font-weight: 500;
+  margin-top: 0.75rem;
+}
+.ts dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.93rem;
+  line-height: 1.7;
+  color: #2c2c2a;
+}
+
+/* ═══════════ 프로젝트 상세 — overlay hero에도 블루프린트 그리드 ═══════════ */
+.page__hero--overlay {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    none;
+  background-size: 30px 30px, 30px 30px, auto;
+}
+.page__hero--overlay .page__title,
+.page__hero--overlay .page__lead { font-family: "Space Grotesk", $sans-serif; }
+
+/* 본문 헤딩 좌측 코발트 마커 (마크다운 ## 전용 — 커스텀 섹션 제목은 제외) */
+.page__content h2:not(.section__title) {
+  padding-left: 0.7rem;
+  border-left: 3px solid $accent;
+  line-height: 1.3;
+}
+.contact-strip h2 { border-left: none; padding-left: 0; }
+
+/* ── 반응형 ── */
+@media (max-width: 600px) {
+  .skill-group { grid-template-columns: 1fr; gap: 0.5rem; }
+  .skill-group__label { padding-top: 0; }
+  .hero { border-radius: 12px; }
+}

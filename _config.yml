@@ -1,0 +1,110 @@
+# ─────────────────────────────────────────────
+#  Site Identity
+# ─────────────────────────────────────────────
+locale                   : "ko-KR"
+title                    : "Minseok Choi"
+title_separator          : "·"
+name                     : "최민석 (Minseok Choi)"
+description              : "임베디드 시스템 · 로봇 · 시스템 소프트웨어 엔지니어 포트폴리오"
+url                      : "https://ManticoreXL.github.io"
+baseurl                  : ""
+repository               : "ManticoreXL/ManticoreXL.github.io"
+search                   : false
+
+# ─────────────────────────────────────────────
+#  Theme  (GitHub Pages 호환 remote theme 방식)
+# ─────────────────────────────────────────────
+remote_theme             : "mmistakes/minimal-mistakes@4.28.0"
+minimal_mistakes_skin    : "default"   # 색상은 assets/css/main.scss 에서 직접 오버라이드
+
+# ─────────────────────────────────────────────
+#  Build
+# ─────────────────────────────────────────────
+markdown                 : kramdown
+highlighter              : rouge
+lang                     : ko
+words_per_minute         : 200
+
+kramdown:
+  input                  : GFM
+  hard_wrap              : false
+  auto_ids               : true
+  syntax_highlighter     : rouge
+
+plugins:
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# _pages 폴더의 페이지를 빌드 대상에 포함
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+
+# ─────────────────────────────────────────────
+#  Author  (사이드바 / 푸터에 노출)
+# ─────────────────────────────────────────────
+author:
+  name                   : "최민석 (Minseok Choi)"
+  avatar                 :   # "/assets/images/avatar.jpg"  ← 프로필 사진을 넣으면 주석 해제
+  bio                    : "임베디드 · 로봇 · 시스템 SW 엔지니어를 지향합니다."
+  location               : "Seoul, KR"
+  links:
+    - label              : "GitHub"
+      icon               : "fab fa-fw fa-github"
+      url                : "https://github.com/ManticoreXL"
+    - label              : "Email"
+      icon               : "fas fa-fw fa-envelope"
+      url                : "mailto:zip3366@naver.com"
+    - label              : "Programmers"
+      icon               : "fas fa-fw fa-code"
+      url                : "https://programmers.co.kr/users/profile"
+
+footer:
+  links:
+    - label              : "GitHub"
+      icon               : "fab fa-fw fa-github"
+      url                : "https://github.com/ManticoreXL"
+    - label              : "Email"
+      icon               : "fas fa-fw fa-envelope"
+      url                : "mailto:zip3366@naver.com"
+
+# ─────────────────────────────────────────────
+#  Collections  (프로젝트 상세 페이지)
+# ─────────────────────────────────────────────
+collections:
+  portfolio:
+    output               : true
+    permalink            : /portfolio/:path/
+
+# ─────────────────────────────────────────────
+#  Defaults
+# ─────────────────────────────────────────────
+defaults:
+  # 일반 페이지
+  - scope:
+      path                : ""
+      type                : pages
+    values:
+      layout              : single
+      author_profile      : true
+  # 프로젝트(포트폴리오) 상세
+  - scope:
+      path                : ""
+      type                : portfolio
+    values:
+      layout              : single
+      author_profile      : false
+      share               : false
+      toc                 : true
+      toc_label           : "목차"
+      toc_icon            : "list-ul"
+      toc_sticky          : true

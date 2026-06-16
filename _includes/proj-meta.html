@@ -1,0 +1,40 @@
+<div class="proj-meta">
+  <div class="proj-meta__grid">
+    {% if page.period %}
+    <div class="proj-meta__item">
+      <span class="proj-meta__k">기간</span>
+      <span class="proj-meta__v">{{ page.period }}</span>
+    </div>
+    {% endif %}
+    {% if page.kind %}
+    <div class="proj-meta__item">
+      <span class="proj-meta__k">유형</span>
+      <span class="proj-meta__v">{{ page.kind }}</span>
+    </div>
+    {% endif %}
+    {% if page.role %}
+    <div class="proj-meta__item">
+      <span class="proj-meta__k">담당 역할</span>
+      <span class="proj-meta__v">{{ page.role }}</span>
+    </div>
+    {% endif %}
+    {% if page.domain %}
+    <div class="proj-meta__item">
+      <span class="proj-meta__k">분야</span>
+      <span class="proj-meta__v">{{ page.domain }}</span>
+    </div>
+    {% endif %}
+  </div>
+
+  {% if page.repo %}
+  <a class="btn-repo" href="{{ page.repo }}" target="_blank" rel="noopener">
+    <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+  </a>
+  {% endif %}
+
+  {% if page.stack %}
+  <div class="proj-meta__chips">
+    {% for s in page.stack %}<span class="chip">{{ s }}</span>{% endfor %}
+  </div>
+  {% endif %}
+</div>
