@@ -6,7 +6,7 @@ domain: "AI · Vision"
 accent: "#6a4bbd"
 period: "2026.03.06 – 2026.03.19"
 kind: "팀 프로젝트"
-role: "데이터 전처리·학습, 웹 백엔드, 라우터, 모델 API 개발"
+role: "데이터 전처리 및 학습, 웹 백엔드, 라우터, 모델 API 개발"
 repo: "https://github.com/ManticoreXL/AI_Pitching_analysis_system"
 stack:
   - Python
@@ -16,6 +16,14 @@ stack:
   - MediaPipe
   - SQLite3
   - Raspberry Pi 5
+stack_colors:
+  - lang
+  - tool
+  - vision
+  - vision
+  - vision
+  - tool
+  - hw
 header:
   overlay_color: "#0c2545"
   overlay_filter: "0.15"

@@ -1,4 +1,4 @@
-<div class="proj-meta">
+<div class="proj-meta" style="--accent: {{ page.accent | default: '#0d4fbd' }}">
   <div class="proj-meta__grid">
     {% if page.period %}
     <div class="proj-meta__item">
@@ -34,7 +34,10 @@
 
   {% if page.stack %}
   <div class="proj-meta__chips">
-    {% for s in page.stack %}<span class="chip">{{ s }}</span>{% endfor %}
+    {% for s in page.stack %}
+      {% assign c = page.stack_colors[forloop.index0] | default: "" %}
+      <span class="chip{% if c != "" %} chip--{{ c }}{% endif %}">{{ s }}</span>
+    {% endfor %}
   </div>
   {% endif %}
 </div>

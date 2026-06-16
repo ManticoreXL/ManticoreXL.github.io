@@ -2,19 +2,26 @@
 title: "PLC 선입선출(FIFO) 적재 시스템"
 excerpt: "MELSEC-Q PLC와 MPS 훈련 장비로 소재의 가공·분류·적재·하역을 자동화하고, 우선순위 관리와 선입선출 알고리즘을 HMI로 제어하는 지능형 공정 라인."
 date: 2026-02-09
-domain: "Industrial · PLC"
+domain: "PLC · Automation · Industrial"
 accent: "#b26a00"
 period: "2026.02.05 – 2026.02.09"
-kind: "팀 프로젝트"
+kind: "팀 프로젝트 (2인)"
 role: "프로젝트 기획·관리, PLC 시퀀스 설계, HMI 작화"
 repo: "https://github.com/ManticoreXL/PLC-Programming"
 stack:
-  - PLC (MELSEC-Q)
+  - PLC
   - Ladder
-  - HMI (GOT2000)
+  - HMI
   - GX Works2
   - GT Designer3
   - MPS
+stack_colors:
+  - hw
+  - algo
+  - hw
+  - tool
+  - tool
+  - hw
 header:
   overlay_color: "#0c2545"
   overlay_filter: "0.15"
@@ -35,8 +42,8 @@ tags:
 
 ## 시스템 구성
 
-- **MITSUBISHI PLC Q03UDVCPU (MELSEC-Q)** — 제어 컨트롤러
-- **GOT2000 HMI Device** — 모니터링 / 제어 인터페이스
+- **MITSUBISHI MELSEC-Q PLC**: 공정 제어기
+- **GOT2000 HMI Device**: 모니터링 인터페이스
 - **MPS 훈련 장비** — 가공·분류·적재 대상 공정 라인
 
 > 개발 환경: GX Works 2 (1.631H) · GT Designer 3 (1.256S) · GT Simulator 3 (1.256S)

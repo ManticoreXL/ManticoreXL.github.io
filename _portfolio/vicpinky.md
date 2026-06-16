@@ -1,6 +1,6 @@
 ---
 title: "다중 로봇 협력형 구호 로봇 시스템"
-excerpt: "VicPinky 모선이 다수의 Turtlebot3를 운반하고, 협소 공간에 투입된 로봇이 자율 탐사로 요구조자를 식별해 구호품을 전달하는 통합 시스템."
+excerpt: "건물 붕괴 현장 등 인력 투입이 어려운 재난 현장에서 소형 탐사 로봇 다수를 동시에 전개하여 인명 구조 활동을 조력하기 위한 구호 로봇 시스템"
 date: 2026-07-09
 domain: "Robotics"
 accent: "#0d4fbd"
@@ -12,11 +12,20 @@ stack:
   - ROS2 Jazzy
   - C++
   - Python
-  - Nav2
   - SLAM Toolbox
+  - Nav2
   - YOLO
   - OpenCV
   - TypeScript / React
+stack_colors:
+  - ros
+  - lang
+  - lang
+  - algo
+  - algo
+  - vision
+  - vision
+  - tool
 header:
   overlay_color: "#0c2545"
   overlay_filter: "0.15"
